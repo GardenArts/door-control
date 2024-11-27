@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+//@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+
+
+// Globale Stile für `html`, `body` und `#app-root`
+html, body {
+  font-family: 'Poppins', sans-serif;
+    height: 100%;  // Stellt sicher, dass `html` und `body` die volle Höhe einnehmen
+    width: 100%;   // Stellt sicher, dass die Breite 100% beträgt, um die gesamte Ansicht zu bedecken
+    margin: 0;     // Entfernt alle Margen, die leere Bereiche erzeugen könnten
+    padding: 0;    // Entfernt alle Paddings
+
+
+}
+
+

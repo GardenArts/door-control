@@ -1,0 +1,23 @@
+<div fxLayout="column" fxLayoutAlign="center center" class="history-container">
+    <table mat-table [dataSource]="history" class="mat-elevation-z8">
+      <ng-container matColumnDef="token">
+        <th mat-header-cell *matHeaderCellDef> Token </th>
+        <td mat-cell *matCellDef="let element"> {{element.token}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef> Datum </th>
+        <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="door">
+        <th mat-header-cell *matHeaderCellDef> Tür </th>
+        <td mat-cell *matCellDef="let element"> {{element.door}} </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="['token', 'date', 'door']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['token', 'date', 'door'];"></tr>
+    </table>
+    <button mat-raised-button color="primary" (click)="goBack()">Zurück</button>
+  </div>
+  

@@ -1,0 +1,54 @@
+<div class="login-container" fxLayout="column" fxLayoutAlign="start center" fxFlexFill>
+  
+    <!-- Logo -->
+    <div class="logo" fxLayoutAlign="center center">
+        <img src="assets/PCON_Logo_dark.png" alt="Logo" class="logo-img">
+    </div>
+  
+    <!-- Begrüßungstext -->
+    <div class="welcome-text-container" fxLayoutAlign="center center">
+        <p class="welcome-text">Willkommen im Türmanagementsystem</p>
+    </div>
+  
+    <!-- Schlüssel-Icon -->
+    <div class="key-image" fxLayoutAlign="center center">
+        <img src="assets/Wifi-Signal-Icon.png" alt="Schlüssel-Icon" class="key-img">
+    </div>
+  
+
+    <!-- Login-Formular -->
+  <div class="login-form-container" fxLayout="column" fxLayoutAlign="center stretch" fxFlex="1 1 auto">
+    <h3 class="login-title">Login</h3>
+  
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <mat-form-field appearance="outline" class="token-input" fxFlexFill>
+            <mat-label>Token eingeben</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="token" required>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Toggle password visibility'" [attr.aria-pressed]="hide">
+                <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+
+        <!-- Fehlermeldung anzeigen, wenn das Feld leer ist -->
+        <mat-error *ngIf="loginForm.get('token')?.hasError('required')">
+            Token ist erforderlich
+        </mat-error>
+
+        <!-- Fehlermeldung anzeigen, wenn der Token ungültig ist -->
+        <mat-error *ngIf="loginForm.get('token')?.hasError('invalidToken')">
+            Ungültiger Token
+        </mat-error>
+        
+        </mat-form-field>
+  
+        <button mat-raised-button color="accent" type="submit" class="login-button custom-login-button" fxFlexFill>
+            Einloggen
+        </button>
+    </form>
+  </div>
+  
+  
+    <!-- Hintergrundbild -->
+    <div class="background-image" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
+      <img src="assets/background image.png" alt="Hintergrund" class="background-image-img">
+  </div>
+  </div>

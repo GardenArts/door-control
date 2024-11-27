@@ -1,0 +1,64 @@
+<div fxLayout="column" fxLayoutAlign="center stretch" fxFlexFill class="door-control-container">
+
+  <!-- Taste 1 - Oben -->
+  <div fxLayout="row" fxLayoutAlign="center center" fxFlex="28.5" fxFlex.sm="30" fxFlex.xs="33" class="door-button" (click)="toggleDoor('oben')">
+    <div fxFlex="50" class="door-icon-container">
+      <div class="door-frame-container">
+        <!-- Der Türrahmen (unbeweglich) -->
+        <img src="assets/door-frame.png" alt="Door Frame" class="door-frame">
+        <!-- Die Tür, die sich dreht -->
+        <div class="door" [ngClass]="{'open': doors.oben}">
+          <img src="assets/oben.png" alt="Oben Door Icon" class="door-icon">
+        </div>
+      </div>
+    </div>
+    <div fxFlex="50" class="door-title-container">
+      <span class="door-title">OBEN</span>
+    </div>
+  </div>
+
+  <!-- Taste 2 - Unten -->
+  <div fxLayout="row" fxLayoutAlign="center center" fxFlex="28.5" fxFlex.sm="30" fxFlex.xs="33" class="door-button" (click)="toggleDoor('unten')">
+    <div fxFlex="50" class="door-icon-container">
+      <div class="door-frame-container">
+        <!-- Der Türrahmen (unbeweglich) -->
+        <img src="assets/door-frame.png" alt="Door Frame" class="door-frame">
+        <!-- Die Tür, die sich dreht -->
+        <div class="door" [ngClass]="{'open': doors.unten}">
+          <img src="assets/unten.png" alt="Unten Door Icon" class="door-icon">
+        </div>
+      </div>
+    </div>
+    <div fxFlex="50" class="door-title-container">
+      <span class="door-title">UNTEN</span>
+    </div>
+  </div>
+
+  <!-- Taste 3 - Workspace -->
+  <div fxLayout="row" fxLayoutAlign="center center" fxFlex="28.5" fxFlex.sm="30" fxFlex.xs="33" class="door-button" (click)="toggleDoor('workspace')">
+    <div fxFlex="50" class="door-icon-container">
+      <div class="door-frame-container">
+        <!-- Der Türrahmen (unbeweglich) -->
+        <img src="assets/door-frame.png" alt="Door Frame" class="door-frame">
+        <!-- Die Tür, die sich dreht -->
+        <div class="door" [ngClass]="{'open': doors.workspace}">
+          <img src="assets/workspace.png" alt="Workspace Door Icon" class="door-icon">
+        </div>
+      </div>
+    </div>
+    <div fxFlex="50" class="door-title-container">
+      <span class="door-title">WORKSPACE</span>
+    </div>
+  </div>
+
+  <!-- Taste 4 - History -->
+  <div fxLayout="row" fxLayoutAlign="center center" fxFlex="14.5" fxFlex.sm="15" fxFlex.xs="17" class="door-button history-button" [routerLink]="['/history']">
+    <div fxFlex="50" class="door-icon-container">
+      <img src="assets/history.png" alt="History Icon" class="door-icon">
+    </div>
+    <div fxFlex="50" class="door-title-container">
+      <span class="door-title">HISTORY</span>
+    </div>
+  </div>
+
+</div>
